@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>使用NoteExpress输出双语参考文献</title>
+      <link href="/2020/07/29/%E4%BD%BF%E7%94%A8NoteExpress%E8%BE%93%E5%87%BA%E5%8F%8C%E8%AF%AD%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
+      <url>/2020/07/29/%E4%BD%BF%E7%94%A8NoteExpress%E8%BE%93%E5%87%BA%E5%8F%8C%E8%AF%AD%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</url>
+      
+        <content type="html"><![CDATA[<p>在投稿时，一些期刊格式规定中文参考文献必需有英文对照，同时也对符号、翻译格式有特殊要求。而Noteexpress自带模板往往不能完全符合贴合格式要求，需要自定义输出模板。以《电网技术》参考文献格式要求为例，展示了自定义双语输出模板的制作方法。</p><p>《电网技术》参考文献格式 （字体要求已省略）：</p><blockquote><ol><li>标点除括弧为半角外，其余均为全角。</li><li>英文译文后需添加”(in Chinese)”后缀。<br>样例：<img src="https://upload-images.jianshu.io/upload_images/23878618-e7f5ccbd7788f3fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电网技术参考文献样例"></li></ol></blockquote><h1 id="打开双语输出功能"><a href="#打开双语输出功能" class="headerlink" title="打开双语输出功能"></a>打开双语输出功能</h1><p>选择NE自带的“电网技术”样式模板，进入样式编辑器。点击左侧“双语输出”选项，在右侧面板中勾选“开启双语输出功能”，然后在下方选中“单列表”及“并列”选项。<br><img src="https://upload-images.jianshu.io/upload_images/23878618-7cb6549957f6d752.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打开双语输出功能并设置"></p><h1 id="设置题录格式"><a href="#设置题录格式" class="headerlink" title="设置题录格式"></a>设置题录格式</h1><p><strong>模板</strong><br>模板定义题录的显示方式，包括要显示哪些文献要素，显示顺序如何，要素间的符号是什么等等。</p><p>选择样式编辑器左侧的“题录-模板”选项，按期刊格式要求修改文献元素、顺序、修改符号半全角等。</p><p>要注意的是，由于NE的中英文输出格式是各自独立互不同步的，所以在修改完默认显示的”English”选项卡格式后，还要点击右侧“Chinese”选项卡再修改一遍。<br><img src="https://upload-images.jianshu.io/upload_images/23878618-09e034c69aeb3356.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置符号格式"></p><p><strong>作者列表</strong><br>就《电网技术》格式要求来说，这一项只需要将中英文选项卡中的半角逗号改为全角逗号即可，其它期刊可按需修改（编者列表同理）。<br><img src="https://upload-images.jianshu.io/upload_images/23878618-02d33103b6824ae9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="作者列表"></p><p><strong>作者姓名</strong><br>在中文人名的翻译上，NE的默认译法为先名后姓，而格式要求译为先姓后名的形式，所以需要在“Chinese”选项卡中做修改（编者姓名同理）。<br><img src="https://upload-images.jianshu.io/upload_images/23878618-33329b9f4d46b1d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="作者姓名"></p><p><strong>后缀</strong><br>在“Chinese”选项卡的后缀文本中填入的文字会自动显示在英文对照文献末尾。</p><p>若后缀错误地出现在中文题录末尾，则将题录的“标题译名”、“作者译名”、“期刊译名”3个字段补充完整即可正常显示。<br><img src="https://upload-images.jianshu.io/upload_images/23878618-427257292585acf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后缀"><br><img src="https://upload-images.jianshu.io/upload_images/23878618-e875ca7c19a87698.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="in Chinese"></p><h1 id="调整"><a href="#调整" class="headerlink" title="调整"></a>调整</h1><p>经过测试，有些能在NE软件中预览正常的效果（如“in Chinese”后缀）在word中反而无法正常显示，另外还有某些段落设置无法生效（如设置行距为12磅），这时只能去除格式化后手动调整格式。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NoteExpress </tag>
+            
+            <tag> 参考文献格式 </tag>
+            
+            <tag> 论文写作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Matlab使用经验记录</title>
       <link href="/2020/07/07/Matlab%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BD%95/"/>
       <url>/2020/07/07/Matlab%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BD%95/</url>
