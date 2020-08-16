@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -91,7 +89,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/03/iMhOIoptqAfK94a.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/03/O7W3dQrZJtRfv8N.png">
 <meta property="article:published_time" content="2020-06-03T10:44:29.000Z">
-<meta property="article:modified_time" content="2020-06-07T09:36:28.208Z">
+<meta property="article:modified_time" content="2020-08-16T01:08:07.600Z">
 <meta property="article:author" content="yan xiao">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next主题">
@@ -110,7 +108,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -452,7 +450,10 @@
 <p><img src="https://i.loli.net/2020/06/03/O7W3dQrZJtRfv8N.png" alt="修改网页标题栏.png"></p>
 <h1 id="发现这个方法的心路历程记录"><a href="#发现这个方法的心路历程记录" class="headerlink" title="发现这个方法的心路历程记录"></a>发现这个方法的心路历程记录</h1><p>作为一个对网页开发知之甚少的非专业人员，只能从文档名称和变量名称的含义来猜测它们之间的逻辑关系，并用“修改部分语句+本地预览”的形式验证自己的操作是不是能达到想要的效果。<br>通过网络搜索我知道了控制网页展示样式的文件夹是主题目录下的<code>layout</code>，还知道了这个文件夹里以下划线开头的文件在使用中都会被忽略。那么只需要再看一下非下划线开头的文件的名字，就可以很容易地猜到它们代表的是与其文件名称相对应的菜单项的展示样式。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">layout</span><br><span class="line"> ├─_custom</span><br><span class="line"> ├─_macro</span><br><span class="line"> ├─_partials</span><br><span class="line"> ├─_scripts</span><br><span class="line"> ├─_third-party</span><br><span class="line"> │  </span><br><span class="line"> │─archive.swig</span><br><span class="line"> ├─category.swig</span><br><span class="line"> ├─index.swig</span><br><span class="line"> ├─page.swig</span><br><span class="line"> ├─post.swig</span><br><span class="line"> ├─tag.swig</span><br><span class="line"> ├...</span><br></pre></td></tr></table></figure>
-<p>既然想修改tag菜单的样式，那我自然而然地先打开了<code>tag.swig</code>文件，浏览了一遍，试图通过变量的命名方式来弄清每一部分的含义——我当然失败了，这些代码的陌生程度太高，仅仅认识里面的几个英文单词对理解它们的实际功能没有太大作用。不过我确实发现了一点什么，那就是在这个文件的开头发现了<code>import 某个名字以下划线开头的文件</code>的语句，这马上让我联想起了C语言中包含头文件的include语句，或许这里的import有同样的包含某个其它文件的含义。<br>再去翻看了所有swig文件中<code>import</code>语句之后列出的文件，发现它们的名字全部都是以下划线开头的，再结合它们的命名方式，我猜测这些所谓会“被忽略”的文件的功能其实有点像积木。把多数网页都会用到的元素样式定义为一个独立的文件，在网页的整体样式文件中只需要各取所需，把现成的积木组合起来形成一个积木拼图就好了。<br>这时我想起<code>tag</code>、<code>about</code>、<code>category</code>页面样式彼此非常相似，它们的积木拼合方式是类似的，甚至可能用的是同一个积木拼图。再联想新建<code>tag</code>、<code>about</code>、<code>category</code>时使用的模板都是<code>page</code>类型，就可以进一步猜想这个为菜单项们所共用的积木拼图就是<code>page.swig</code>。<br>于是又认真看了一遍<code>page.swig</code>的内容，最后在标识PAGE BODY的一大堆#号上方发现了一个<code>include ... page-header.swig</code>的语句。对比一下网页的位置，觉得它可能就是代表页面标题的语句，所以删除这条代码然后预览，果然成功了。</p>
+<p>既然想修改tag菜单的样式，那我自然而然地先打开了<code>tag.swig</code>文件，浏览了一遍，试图通过变量的命名方式来弄清每一部分的含义——我当然失败了，这些代码的陌生程度太高，仅仅认识里面的几个英文单词对理解它们的实际功能没有太大作用。不过我确实发现了一点什么，那就是在这个文件的开头发现了<code>import 某个名字以下划线开头的文件</code>的语句，这马上让我联想起了C语言中包含头文件的include语句，或许这里的import有同样的包含某个其它文件的含义。</p>
+<p>再去翻看了所有swig文件中<code>import</code>语句之后列出的文件，发现它们的名字全部都是以下划线开头的，再结合它们的命名方式，我猜测这些所谓会“被忽略”的文件的功能其实有点像积木。把多数网页都会用到的元素样式定义为一个独立的文件，在网页的整体样式文件中只需要各取所需，把现成的积木组合起来形成一个积木拼图就好了。</p>
+<p>这时我想起<code>tag</code>、<code>about</code>、<code>category</code>页面样式彼此非常相似，它们的积木拼合方式是类似的，甚至可能用的是同一个积木拼图。再联想新建<code>tag</code>、<code>about</code>、<code>category</code>时使用的模板都是<code>page</code>类型，就可以进一步猜想这个为菜单项们所共用的积木拼图就是<code>page.swig</code>。<br>于是又认真看了一遍<code>page.swig</code>的内容，最后在标识PAGE BODY的一大堆#号上方发现了一个<code>include ... page-header.swig</code>的语句。对比一下网页的位置，觉得它可能就是代表页面标题的语句，所以删除这条代码然后预览，果然成功了。</p>
+<h1 id="NexT不同主题预览"><a href="#NexT不同主题预览" class="headerlink" title="NexT不同主题预览"></a>NexT不同主题预览</h1><p><a href="https://github.com/theme-next/awesome-next#live-preview" target="_blank" rel="noopener">Live Preview</a></p>
 
       
     </div>
@@ -634,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关闭方法"><span class="nav-number">1.</span> <span class="nav-text">关闭方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改当前菜单的网页标题"><span class="nav-number">2.</span> <span class="nav-text">修改当前菜单的网页标题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发现这个方法的心路历程记录"><span class="nav-number">3.</span> <span class="nav-text">发现这个方法的心路历程记录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关闭方法"><span class="nav-number">1.</span> <span class="nav-text">关闭方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改当前菜单的网页标题"><span class="nav-number">2.</span> <span class="nav-text">修改当前菜单的网页标题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发现这个方法的心路历程记录"><span class="nav-number">3.</span> <span class="nav-text">发现这个方法的心路历程记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NexT不同主题预览"><span class="nav-number">4.</span> <span class="nav-text">NexT不同主题预览</span></a></li></ol></div>
             
 
           </div>

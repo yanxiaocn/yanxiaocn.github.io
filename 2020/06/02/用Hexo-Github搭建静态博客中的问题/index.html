@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -81,14 +79,14 @@
 
 
 
-<meta name="description" content="使用hexo n &lt;name&gt;时没能在public文件夹中生成相应的静态文件在为文章添加tag时，一定要在-后面加上空格，否则无法被识别。 123- hexo- 静态博客- 问题处理  为站点添加本地搜索虽然Hexo官方Wiki上给出了用Swiftype实现站内搜索的方法，但是我详细查询之后发现Swiftype现在不再提供免费账户了。新注册用户在试用期结束之后不能再像以前那样可以继续以">
+<meta name="description" content="使用hexo n &lt;name&gt;时没能在public文件夹中生成相应的静态文件在为文章添加tag时，一定要在-后面加上空格，否则无法被识别。 123- hexo- 静态博客- 问题处理  为站点添加本地搜索虽然Hexo官方Wiki上给出了用Swiftype实现站内搜索的方法，但是我详细查询之后发现Swiftype现在不再提供免费服务了。新注册用户在试用期结束之后不能再像以前那样可以继续以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录使用Hexo+Github搭建静态博客中的问题">
 <meta property="og:url" content="https://yanxiaocn.github.io/2020/06/02/%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="实践实践">
-<meta property="og:description" content="使用hexo n &lt;name&gt;时没能在public文件夹中生成相应的静态文件在为文章添加tag时，一定要在-后面加上空格，否则无法被识别。 123- hexo- 静态博客- 问题处理  为站点添加本地搜索虽然Hexo官方Wiki上给出了用Swiftype实现站内搜索的方法，但是我详细查询之后发现Swiftype现在不再提供免费账户了。新注册用户在试用期结束之后不能再像以前那样可以继续以">
+<meta property="og:description" content="使用hexo n &lt;name&gt;时没能在public文件夹中生成相应的静态文件在为文章添加tag时，一定要在-后面加上空格，否则无法被识别。 123- hexo- 静态博客- 问题处理  为站点添加本地搜索虽然Hexo官方Wiki上给出了用Swiftype实现站内搜索的方法，但是我详细查询之后发现Swiftype现在不再提供免费服务了。新注册用户在试用期结束之后不能再像以前那样可以继续以">
 <meta property="article:published_time" content="2020-06-02T01:28:58.000Z">
-<meta property="article:modified_time" content="2020-06-26T09:32:44.296Z">
+<meta property="article:modified_time" content="2020-08-16T01:04:52.646Z">
 <meta property="article:author" content="yan xiao">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="静态博客">
@@ -107,7 +105,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -444,7 +442,7 @@
         <h1 id="使用hexo-n-lt-name-gt-时没能在public文件夹中生成相应的静态文件"><a href="#使用hexo-n-lt-name-gt-时没能在public文件夹中生成相应的静态文件" class="headerlink" title="使用hexo n &lt;name&gt;时没能在public文件夹中生成相应的静态文件"></a>使用<code>hexo n &lt;name&gt;</code>时没能在<code>public</code>文件夹中生成相应的静态文件</h1><p>在为文章添加tag时，一定要在<code>-</code>后面加上空格，否则无法被识别。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- hexo</span><br><span class="line">- 静态博客</span><br><span class="line">- 问题处理</span><br></pre></td></tr></table></figure>
 
-<h1 id="为站点添加本地搜索"><a href="#为站点添加本地搜索" class="headerlink" title="为站点添加本地搜索"></a>为站点添加本地搜索</h1><p>虽然Hexo官方Wiki上给出了<a href="https://github.com/iissnan/hexo-theme-next/wiki/Swiftype%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2" target="_blank" rel="noopener">用Swiftype实现站内搜索</a>的方法，但是我详细查询之后发现Swiftype现在不再提供免费账户了。新注册用户在试用期结束之后不能再像以前那样可以继续以比较低的权限继续使用，而最低付费版本每月也要17美元左右。</p>
+<h1 id="为站点添加本地搜索"><a href="#为站点添加本地搜索" class="headerlink" title="为站点添加本地搜索"></a>为站点添加本地搜索</h1><p>虽然Hexo官方Wiki上给出了<a href="https://github.com/iissnan/hexo-theme-next/wiki/Swiftype%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2" target="_blank" rel="noopener">用Swiftype实现站内搜索</a>的方法，但是我详细查询之后发现Swiftype现在不再提供免费服务了。新注册用户在试用期结束之后不能再像以前那样可以继续以比较低的权限继续使用，而最低付费版本每月也要17美元左右。</p>
 <p>使用Swiftype对钱包太不友好，再加上因为我身在墙内而造成的访问缓慢和定期登陆Swiftype手动获取网站文章的繁琐，让我很快就放弃了这个途径，甚至想要放弃在博客中添加站内搜索这个功能——毕竟现在也没有几篇文章，站内全文搜索目前没有那么必要。</p>
 <p>不过后来我惊喜地发现，竟然有一个Hexo插件<code>hexo-generator-search</code>(<a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">项目github</a>)可以直接完成这个功能。</p>
 <p>原理大概是在执行<code>hexo g</code>的过程中，插件会同时生成一个包含网站所有文章文本的XML文件，搜索时对比检索词和这个XML文件就可以迅速找到匹配的文章。</p>
@@ -456,7 +454,8 @@
 
 </li>
 </ol>
-<p>这时只要重新生成静态文件，部署到Github，你就会发现Hexo博客中出现了一个搜索按钮，通过输入检索词就可以对站内文章进行全文检索了。这个搜索按钮是Hexo自动添加的，与使用的主题无关，因此不需要修改主题配置文件。我在配置的过程中就误以为搜索项与添加自定义菜单项一样需要<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">手动创建页面</a>，将主题配置文件<code>menu</code>字段中的<code>search</code>注释去掉了，导致最后生成的静态网页上出现了两个搜索框。</p>
+<p>这时只要重新生成静态文件，部署到Github，你就会发现Hexo博客中出现了一个搜索按钮，通过输入检索词就可以对站内文章进行全文检索了。</p>
+<p>这个搜索按钮是Hexo自动添加的，与使用的主题无关，因此不需要修改主题配置文件。我在配置的过程中就误以为搜索项与添加自定义菜单项一样需要<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">手动创建页面</a>，将主题配置文件<code>menu</code>字段中的<code>search</code>的注释去掉了，导致最后生成的静态网页上出现了两个搜索框。</p>
 <p>参考文献：<br>[1] <a href="https://www.jianshu.com/p/02afabcae502" target="_blank" rel="noopener">百度学术</a><br>[2] <a href="https://www.sqlsec.com/2017/12/hexosearch.html" target="_blank" rel="noopener">Hexo博客无法搜索的终极解决方法</a><br>[3] <a href="https://www.jianshu.com/p/685bf59cde5e" target="_blank" rel="noopener">为Hexo blog博客创建本地搜索引擎</a></p>
 <h1 id="在font-matter中为文章添加多个分类"><a href="#在font-matter中为文章添加多个分类" class="headerlink" title="在font-matter中为文章添加多个分类"></a>在<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">font-matter</a>中为文章添加多个分类</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [A, A1]</span><br><span class="line">- [B, B1]</span><br><span class="line">- [C]</span><br></pre></td></tr></table></figure>
 <p>此时这篇文章同时包括A、B、C三个分类，其中A1、A2分别是A、B的子分类。</p>
