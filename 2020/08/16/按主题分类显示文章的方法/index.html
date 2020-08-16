@@ -81,14 +81,14 @@
 
 <meta name="description" content="偶然在知乎上看到关于优化静态博客归档页面的问题，看完问题描述后发现，下面这种“按主题分类显示文章”的方式我也很喜欢，所以自己摸索了一个可以实现这个效果的苯方法。 思路因为markdown是支持html标签的，所以要做的其实就是新建一个页面，然后用html语言写上想显示的主题、主题下的文章名和链接，最后定义不同内容的渲染样式就大功告成了。 步骤 新建一个页面  我新建的页面为“works”，中文名定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="按主题分类显示文章的方法">
+<meta property="og:title" content="Hexo博客按主题分类显示文章的方法">
 <meta property="og:url" content="https://yanxiaocn.github.io/2020/08/16/%E6%8C%89%E4%B8%BB%E9%A2%98%E5%88%86%E7%B1%BB%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="实践实践">
 <meta property="og:description" content="偶然在知乎上看到关于优化静态博客归档页面的问题，看完问题描述后发现，下面这种“按主题分类显示文章”的方式我也很喜欢，所以自己摸索了一个可以实现这个效果的苯方法。 思路因为markdown是支持html标签的，所以要做的其实就是新建一个页面，然后用html语言写上想显示的主题、主题下的文章名和链接，最后定义不同内容的渲染样式就大功告成了。 步骤 新建一个页面  我新建的页面为“works”，中文名定">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/6dd14aacly1ghsww0uximj20kj05lq42.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/6dd14aacly1ghsrn6qshmj20mm0byq3p.jpg">
 <meta property="article:published_time" content="2020-08-16T09:02:11.000Z">
-<meta property="article:modified_time" content="2020-08-16T13:07:50.659Z">
+<meta property="article:modified_time" content="2020-08-16T13:17:19.553Z">
 <meta property="article:author" content="yan xiao">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="NexT主题">
@@ -129,7 +129,7 @@
 
 
 
-  <title>按主题分类显示文章的方法 | 实践实践</title>
+  <title>Hexo博客按主题分类显示文章的方法 | 实践实践</title>
   
 
 
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">按主题分类显示文章的方法</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo博客按主题分类显示文章的方法</h1>
         
 
         <div class="post-meta">
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  639字
+                  640字
                 </span>
               
 
@@ -452,7 +452,7 @@
 <p> 找到<code>yourname.github.io\source\works</code> 文件夹下的<code>index.md</code>文件，按以下结构列出每一主题名称及对应文章（如果对html感兴趣可参看笑来老师的这一篇<a href="https://github.com/baichampion/xiaolai.github.io/blob/master/2016/06/25/makecs-html-css/index.html" target="_blank" rel="noopener">简明教程</a>）。</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;strong&gt;主题名称&lt;&#x2F;strong&gt; &lt;&#x2F;p&gt;  </span><br><span class="line"></span><br><span class="line">&lt;a href&#x3D;&quot;文章链接&quot;&gt;篇名&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href&#x3D;&quot;文章链接&quot;&gt;篇名&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">. . .</span><br></pre></td></tr></table></figure>
 <p> 上面结构中出现的元素需要自己手动修改。想展示几个主题，就写几个类似这样的结构；一个主题下面有多少篇文章，就写多少文章链接。语句之间的空行不能省略。</p>
-<p> 前面说这是个苯方法，原因就在这里。你在这里需要手动填入每篇文章链接和篇名，当文章较多时，就显得繁琐。</p>
+<p> 前面说这是个苯方法，原因就在这一步。你在这里需要手动填入每篇文章链接和篇名，当文章较多时，就显得繁琐。</p>
 </li>
 <li><p><strong>定义样式</strong><br> 在<code>index.md</code>文件的结尾处，加上以下语句：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  strong &#123;</span><br><span class="line">    font-size: 26px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
